@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+
+{% block body %} 
+
+
+
+<div class="container border border-2 border-info rounded-2 p-3" style="width: 400px;margin-top: 100px; margin-bottom: 200px;">
+<form action="user" method="post">
+{% csrf_token %}
+    <h3 class="p-3">
+        <small class="text-muted">Login To Your Account</small>
+      </h3>
+    <div class="mb-3 form-floating">
+      
+      <input type="text" class="form-control" id="InputUsername" aria-describedby="emailHelp" name="username" placeholder="Enter Username">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="InputUsername" >Username</label>
+    </div>
+    <div class="mb-3 form-floating">
+     
+      <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Enter Password">
+      <label for="InputPassword" class="form-label">Password</label>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button><a href="/register" class="streched-link p-3">Create Account</a>
+  </form>
+
+  
+</div>
+
+{% endblock %}
+

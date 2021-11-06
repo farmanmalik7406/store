@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container py-3">
+    
+
+    <form>
+    <div class="row">
+    <div class="col">
+        <div class="mb-3 form-floating">
+          
+          <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="username">
+          <label for="" class="form-label">Full Name</label>
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3 form-floating">
+          
+          <input type="email"
+            class="form-control" name="" id="email" aria-describedby="helpId" placeholder="email">
+            <label for="" class="form-label">Email Address</label>
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3 form-floating">
+          
+          <input type="tel"
+            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Mobile Number">
+            <label for="" class="form-label">Mobile</label>
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3 form-floating">
+         
+          <textarea class="form-control" name="" id="" rows="3" placeholder="Address"></textarea>
+           <label for="" class="form-label">Address</label>
+        </div>
+        <div class="mb-3">
+        <div class="row">
+            <div class="col-6">
+            <label for="" class="form-label"></label>
+          <select class="form-control" name="State" id="">
+            <option selected>--Select State--</option>
+            <option></option>
+            <option></option>
+          </select>      
+            </div>
+              <div class="col-6">
+            <label for="" class="form-label"></label>
+          <select class="form-control" name="State" id="">
+            <option selected>--City--</option>
+            <option></option>
+            <option></option>
+          </select>      
+            </div>
+        </div>
+        
+        </div>
+         <div class="mb-3 form-floating">
+          
+          <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="username">
+          <label for="" class="form-label">Zip</label>
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+    </div>
+    <div class="col-sm border">
+        {% for cart in cart %}
+        <div class="row text-primary">
+        <div class="col-5 mb-3 font-weight-bold">
+            {{cart.product.name}} 
+        </div>
+        <div class="col-2">
+          	&#8377;{{cart.product.price}}
+        </div>
+        <div class="col-2 mb-3">
+          QTY : {{cart.quantity}}
+        </div>
+         <div class="col-2 mb-3">
+          	&#8377;{{cart.total}}
+        </div>
+        </div>
+          
+          
+          {% endfor %}
+        <div class="row">
+        <div class="col">
+          Order Total : &#8377;{{cartTotal}}
+        </div>
+           
+        </div>
+         
+    </div>
+        
+    </div>
+        
+    </form>
+
+</div>
+
+{% endblock body %}
+

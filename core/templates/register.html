@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+
+
+{% block body %} 
+
+
+<div class="container border border-2 border-info rounded-2 p-3" style="width: 600px;margin-top: 100px; margin-bottom: 200px;">
+    <form action="/register/user" method="post">
+    {% csrf_token %}
+        <h3 class="p-3">
+            <small class="text-muted">Create Account</small>
+          </h3>
+        <div class="mb-3 form-floating">
+          
+          <input type="text" class="form-control" id="InputFirstname" name="fname"  placeholder="Enter Username">
+        
+          <label for="InputFirstName" >First Name</label>
+        </div>
+        <div class="mb-3 form-floating">
+          
+            <input type="text" class="form-control" id="InputLastname" name="lname" placeholder="Enter Username">
+          
+            <label for="InputLastName" >last Name</label>
+          </div>
+          <div class="mb-3 form-floating">
+          
+            <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Enter Username">
+          
+            <label for="InputEmail" >Email</label>
+          </div>
+        <div class="mb-3 form-floating">
+         
+          <input type="password" class="form-control" id="InputPassword" name="pass1" placeholder="Enter Password">
+          <label for="InputPassword" class="form-label">Password</label>
+        </div>
+        <div class="mb-3 form-floating">
+         
+            <input type="password" class="form-control" id="InputPassword" name="pass2" placeholder="Enter Password">
+            <label for="InputPassword" class="form-label">Confirm Password</label>
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button><a href="/login" class="streched-link p-3">Already Have Account</a>
+      </form>
+    
+      
+    </div>
+{% endblock %}
